@@ -1,0 +1,165 @@
+
+
+* {
+	margin: 0px; /*by default browsers apply some padding and margin*/
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	/*font-family: "Lato", sans-serif ;*/
+ /* font-family: 'Amatic SC', cursive;*/
+ font-family: 'Jua', sans-serif;
+  background-image: linear-gradient(to right bottom,rgba(214, 214, 0, 0.8),rgb(255, 198, 0));
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.7;
+	color: #777;
+	padding: 30px;
+  overflow: hidden;
+}
+
+.header {
+	height: 95vh;
+	background-image: linear-gradient(to right bottom,rgba(0, 0, 17, .9),rgba(1, 2, 4, .9)) ,url(../img/hero2.jpg) ;
+	background-size: cover;
+	background-position: top;
+	position: relative;  /*so that we can use absolute positioning in its child elements */
+
+	clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
+} 
+
+.logo-box{
+   position: absolute;
+   top: 0px;
+   left: 14px;
+}
+
+.logo {
+  margin:0;
+  padding: 0;
+	height:58px;
+  animation: moveInTop 1s ease-out; 
+}
+
+.text-box{       /* contains two headings and a button*/
+  margin-top: 20px;
+	position:absolute;
+	top:40%;
+	left: 50%; /* 50% of the width of the parent element(which has its position set to 'relative' ) */
+	transform: translate(-50%,-50%);  /* wrt to this element(.text-box) */
+	text-align: center;
+  width:110%;
+ /* font-weight: 1000;*/
+  font-size: 30px;
+}
+
+.line-1,.line-3,.line-5{
+   animation: moveInRight 2s ease-out; 
+}
+
+.line-2,.line-4{
+   animation: moveInLeft 2s ease-out; 
+}
+
+footer{
+   position:absolute;
+    bottom: 3px;
+    right: 3px;
+    color: black;
+    font-size: 23px;
+line-height:1;
+}
+
+.contact{
+  animation: moveInBottom 1s ease-out; 
+}
+
+/*
+.heading-primary{
+	color:#fff;
+	text-transform: uppercase;
+	backface-visibility: hidden; 
+	margin-bottom: 60px;
+}
+
+.heading-primary-main{
+      display:block;
+      font-size: 60px;
+      font-weight: 400;
+      letter-spacing: 35px;
+
+      animation-name: moveInLeft;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+} 
+
+.heading-primary-sub{
+      display:block;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 17.4px;
+
+      animation: moveInRight 1s ease-out; 
+}
+*/
+@keyframes moveInLeft {
+   0%{
+   	opacity:0; 
+   	transform: translateX(-100px);  /* start from the left */
+   }
+
+   80%{
+   	transform: translateX(10px);  /*we want the animation to fist go on the right side*/
+   }
+
+   100%{
+   	opacity:1;
+   	transform: translate(0);
+
+   }
+}
+
+@keyframes moveInRight {
+   0%{
+   	opacity:0;
+   	transform: translateX(100px);  /* start from the left */
+   }
+
+   80%{
+   	transform: translateX(-10px);  /*we want the animation to fist go on the left side*/
+
+   }
+
+   100%{
+   	opacity:1;
+   	transform: translate(0);
+
+   }
+}
+
+@keyframes moveInBottom{
+   0%{
+   	opacity:0;
+   	transform: translateY(30px);
+   }110%
+
+   100%{
+   	opacity:1;
+   	transform: translate(0);
+
+   }
+}
+
+@keyframes moveInTop{
+   0%{
+    opacity:0;
+    transform: translateY(-30px);
+   }110%
+
+   100%{
+    opacity:1;
+    transform: translate(0);
+
+   }
+}
